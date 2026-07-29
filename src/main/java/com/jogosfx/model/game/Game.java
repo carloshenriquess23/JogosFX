@@ -1,5 +1,7 @@
 package com.jogosfx.model.game;
 
+import java.util.List;
+
 public class Game {
 
     private int gameId;
@@ -11,6 +13,8 @@ public class Game {
     private double rating;
     private String poster;
     private boolean active;
+    List<Gender> genders;
+    List<Platform> platforms;
 
     public double getPrice(){
 
