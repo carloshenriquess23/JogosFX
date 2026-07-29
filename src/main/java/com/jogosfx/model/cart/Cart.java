@@ -24,7 +24,7 @@ public class Cart {
 
         for (CartItem item : cartItems) {
 
-            total+=item.getAmount()*gamePrice;
+            total+=gamePrice;
         }
 
         return total;
