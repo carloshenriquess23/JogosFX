@@ -3,14 +3,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Connection {
+public final class ConnectionDB {
 
-    protected static generateConnection() throws SQLException {
+    private ConnectionDB(){}
 
-        String url = "jdbc:mysql://localhost:3306/jogosfx";
-        String user = "root";
-        String password = "1912";
+    public static Connection generateConnection() throws SQLException{
 
-        return DriverManager.getConnection(url,user,password);
+        final String URL = "jdbc:mysql://localhost:3306/jogosfx";
+        final String USER = "root";
+        final String PASSWORD = "1912";
+
+        Connection connectionDB = DriverManager.getConnection(URL,USER,PASSWORD);
+
+        System.out.println("Conectado com sucesso!");
+        return connectionDB;
     }
 }

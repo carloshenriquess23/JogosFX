@@ -4,16 +4,40 @@ public abstract class User {
 
     private int userId;
     private String email;
-    private String password;
     private String name;
     private double balance;
 
-    protected boolean checkPassword(String rawPassword){
+    protected User(int userId, String email, String name, double balance) {
 
-        return rawPassword.equals(this.password);
+        this.userId = userId;
+        this.email = email;
+        this.name = name;
+        this.balance = balance;
+    }
+
+    protected User(int userId,String email, String name) {
+
+        this.userId = userId;
+        this.email = email;
+        this.name = name;
     }
 
     public boolean requiresExtraAuthentication(){
         return false;
     }
+
+    public int getUserId() {
+
+        return this.userId;
+    }
+
+    public String getEmail(){
+        return this.email;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public double getBalance(){ return this.balance;}
 }
