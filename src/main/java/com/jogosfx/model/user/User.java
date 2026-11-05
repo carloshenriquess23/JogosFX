@@ -22,6 +22,9 @@ public abstract class User {
         this.name = name;
     }
 
+    public User(String email, String name) {
+    }
+
     public boolean requiresExtraAuthentication(){
         return false;
     }

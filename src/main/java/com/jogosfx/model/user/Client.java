@@ -8,7 +8,7 @@ public class Client extends User{
         super(userId, email, name, balance);
     }
 
-    public Client(int userId,String email, String name) {
-        super(userId,email,name);
+    public Client(String email, String name) {
+        super(email,name);
     }
 }
