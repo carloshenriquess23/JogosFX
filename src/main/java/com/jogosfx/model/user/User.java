@@ -23,6 +23,9 @@ public abstract class User {
     }
 
     public User(String email, String name) {
+
+        this.email = email;
+        this.name = name;
     }
 
     public boolean requiresExtraAuthentication(){

@@ -2,20 +2,71 @@ package com.jogosfx.Test;
 
 import com.jogosfx.dao.UserDAO;
 import com.jogosfx.model.user.Client;
+import com.jogosfx.model.user.User;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class TestDAO {
 
-    static void userDAOTest() throws ClassNotFoundException, SQLException {
+    public static void userDAOTest() throws ClassNotFoundException, SQLException {
 
-        int userAtual=5;
-        System.out.println("Testando Insert USER DAO:");
+        int userAtual=10;
+
+        System.out.println("-----------Testando Insert USER DAO-----------");
 
         Client cl1=new Client("pessoa"+(userAtual+1)+"@gmail.com","Pessoa"+(userAtual+1));
-        System.out.println("Inserindo usuário:" +
-                "Email:pessoa"+(userAtual+1)+"@gmail.com" +
-                "Nome:Pessoa"+(userAtual+1));
+        System.out.println("Inserindo usuário:\n" +
+                "Email: "+cl1.getEmail()+"\n"+
+                "Nome: "+cl1.getName());
         int testInsert= UserDAO.insertUser(cl1,"12345");
+        System.out.println("Insert Result:"+testInsert);
+
+        System.out.println("-----------Testando Query ID USER DAO-----------");
+        ArrayList<User> usersFoundId= UserDAO.findById(userAtual);
+
+        System.out.println("Usuários encontrados pelo ID:"+ usersFoundId.size());
+        for(User u:usersFoundId){
+
+            System.out.println("ID User:"+u.getUserId());
+            System.out.println("Email User:"+u.getEmail());
+            System.out.println("Name User:"+u.getName());
+            System.out.println("Balance User:"+u.getBalance());
+        }
+
+        System.out.println("-----------Testando Query Email USER DAO-----------");
+        ArrayList<User> usersFoundEmail= UserDAO.findByEmail(cl1.getEmail());
+
+        System.out.println("Usuários encontrados pelo Email:"+ usersFoundEmail.size());
+        for(User u:usersFoundId){
+
+            System.out.println("ID User:"+u.getUserId());
+            System.out.println("Email User:"+u.getEmail());
+            System.out.println("Name User:"+u.getName());
+            System.out.println("Balance User:"+u.getBalance());
+        }
+
+        System.out.println("-----------Testando Query Name USER DAO-----------");
+        ArrayList<User> usersFoundName= UserDAO.findByName(cl1.getName());
+
+        System.out.println("Usuários encontrados pelo Nome:"+ usersFoundName.size());
+        for(User u:usersFoundId){
+
+            System.out.println("ID User:"+u.getUserId());
+            System.out.println("Email User:"+u.getEmail());
+            System.out.println("Name User:"+u.getName());
+            System.out.println("Balance User:"+u.getBalance());
+        }
+
+        System.out.println("-----------Testando Update USER DAO-----------");
+
+        User u1=usersFoundId.get(0);
+        int updateResult = UserDAO.updateUser(u1,"1234");
+        System.out.println("Update Result:"+updateResult);
+
+        System.out.println("-----------Testando Delete USER DAO-----------");
+
+        int deleteResult=UserDAO.deleteUser(userAtual);
+        System.out.println("Delete Result:"+deleteResult);
     }
 }
