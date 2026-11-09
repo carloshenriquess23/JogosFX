@@ -1,6 +1,8 @@
 package com.jogosfx.Test;
 
+import com.jogosfx.dao.AdmDAO;
 import com.jogosfx.dao.UserDAO;
+import com.jogosfx.model.user.Adm;
 import com.jogosfx.model.user.Client;
 import com.jogosfx.model.user.User;
 
@@ -9,9 +11,9 @@ import java.util.ArrayList;
 
 public class TestDAO {
 
-    public static void userDAOTest() throws ClassNotFoundException, SQLException {
+    final static int userAtual=10;
 
-        int userAtual=10;
+    public static void userDAOTest() throws ClassNotFoundException, SQLException {
 
         System.out.println("-----------Testando Insert USER DAO-----------");
 
@@ -68,5 +70,24 @@ public class TestDAO {
 
         int deleteResult=UserDAO.deleteUser(userAtual);
         System.out.println("Delete Result:"+deleteResult);
+    }
+
+    public static void admDAOTest() throws ClassNotFoundException, SQLException {
+
+        System.out.println("-----------Testando Insert ADM DAO-----------");
+
+        ArrayList<User> usersFoundId= UserDAO.findById((userAtual));
+        Adm adm1=new Adm(usersFoundId.get(0).getUserId(),usersFoundId.get(0).getEmail(),usersFoundId.get(0).getName(),"6565656565"); //10 digitos na credential
+        int insertResult= AdmDAO.insertAdmin(adm1);
+        System.out.println("Admin Insert Result:"+insertResult);
+
+        System.out.println("-----------Testando Query Credential ADM DAO-----------");
+        ArrayList<Adm> admFoundCredential= AdmDAO.findByCredential(adm1.getCredential());
+
+        System.out.println("Quantidade de Admins encontrados: "+admFoundCredential.size());
+        System.out.println("Adm Credential: "+admFoundCredential.get(0).getCredential());
+        System.out.println("Adm User ID: "+admFoundCredential.get(0).getUserId());
+        System.out.println("Adm Email: "+admFoundCredential.get(0).getEmail());
+        System.out.println("Adm Nome: "+admFoundCredential.get(0).getName());
     }
 }
