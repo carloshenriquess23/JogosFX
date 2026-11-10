@@ -48,7 +48,8 @@ public class AdmDAO {
 
             while (executeCommand.next()) {
 
-                usersFound.add(new Adm(executeCommand.getInt(1), executeCommand.getString(2), executeCommand.getString(3), executeCommand.getString(4)));
+                Adm userFound=new Adm(executeCommand.getInt("ID_USER"), executeCommand.getString("EMAIL"), executeCommand.getString("NAME"), executeCommand.getString("CREDENTIAL"));
+                usersFound.add(userFound);
             }
 
             generateConnection.close();
