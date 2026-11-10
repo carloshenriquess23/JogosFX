@@ -16,6 +16,11 @@ public class Gender {
         this.name = name;
     }
 
+    public Gender(int genderId, String name) {
+        this.genderId = genderId;
+        this.name=name;
+    }
+
     public int getGenderId() {
         return genderId;
     }

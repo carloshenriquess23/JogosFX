@@ -24,7 +24,7 @@ public class GameDAO {
     public static int insertGame(Game game) throws SQLException, ClassNotFoundException {
 
         String command="INSERT INTO TB_GAME(NAME,PRICE,DESCRIPTION,DEVELOPER_ID_DEVELOPER,POSTER,ACTIVE, GENDER_ID_GENDER,PLATFORM_ID_PLATFORM)\n" +
-                "\t\tVALUES(?,?,?,?,?);";
+                "\t\tVALUES(?,?,?,?,?,?,?,?);";
 
         try(Connection getConnection=ConnectionDB.generateConnection();
             PreparedStatement preparedCommand=getConnection.prepareStatement(command)){
@@ -117,7 +117,7 @@ public class GameDAO {
 
     public static int updateGame(Game game)  throws SQLException, ClassNotFoundException {
 
-        String command = "UPDATE TB_GAME NAME,PRICE,STOCK,DESCRIPTION,DEVELOPER_ID_DEVELOPER,RATING,POSTER,ACTIVE,GENDER_ID_GENDER,PLATFORM_ID_PLATFORM\n" +
+        String command = "UPDATE TB_GAME\n" +
                 "\t\t\tSET NAME=?,PRICE=?,DESCRIPTION=?,DEVELOPER_ID_DEVELOPER=?,RATING=?,POSTER=?,ACTIVE=?,GENDER_ID_GENDER=?,PLATFORM_ID_PLATFORM=?\n" +
                 "            WHERE ID_GAME=?;";
 
