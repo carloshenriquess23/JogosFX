@@ -17,16 +17,17 @@ public class AdmDAO {
                 "\t\tVALUES(?,?);";
 
 
-        Connection generateConnection=ConnectionDB.generateConnection();
+        try(Connection generateConnection=ConnectionDB.generateConnection();
+        PreparedStatement commandPreparation = generateConnection.prepareStatement(command);) {
 
-        PreparedStatement commandPreparation = generateConnection.prepareStatement(command);
-        commandPreparation.setString(1,adm.getCredential());
-        commandPreparation.setInt(2,adm.getUserId());
+            commandPreparation.setString(1, adm.getCredential());
+            commandPreparation.setInt(2, adm.getUserId());
 
-        int executeCommand = commandPreparation.executeUpdate();
+            int executeCommand = commandPreparation.executeUpdate();
 
-        generateConnection.close();
-        return executeCommand;
+            generateConnection.close();
+            return executeCommand;
+        }
     }
 
     public static ArrayList findByCredential(String credential) throws SQLException {
@@ -37,20 +38,21 @@ public class AdmDAO {
                 "\t\tWHERE CREDENTIAL=?;";
 
 
-        Connection generateConnection=ConnectionDB.generateConnection();
+        try(Connection generateConnection=ConnectionDB.generateConnection();
+        PreparedStatement commandPreparation = generateConnection.prepareStatement(command);) {
 
-        PreparedStatement commandPreparation = generateConnection.prepareStatement(command);
-        commandPreparation.setString(1,credential);
+            commandPreparation.setString(1, credential);
 
-        ResultSet executeCommand = commandPreparation.executeQuery();
-        ArrayList<Adm> usersFound = new ArrayList<>();
+            ResultSet executeCommand = commandPreparation.executeQuery();
+            ArrayList<Adm> usersFound = new ArrayList<>();
 
-        while(executeCommand.next()){
+            while (executeCommand.next()) {
 
-            usersFound.add(new Adm(executeCommand.getInt(1),executeCommand.getString(2),executeCommand.getString(3),executeCommand.getString(4)));
+                usersFound.add(new Adm(executeCommand.getInt(1), executeCommand.getString(2), executeCommand.getString(3), executeCommand.getString(4)));
+            }
+
+            generateConnection.close();
+            return usersFound;
         }
-
-        generateConnection.close();
-        return usersFound;
     }
 }
