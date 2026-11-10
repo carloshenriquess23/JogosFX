@@ -67,4 +67,34 @@ public class GameRatingDAO {
             return gameRatingsFound;
         }
     }
+
+    public static int updateGameRating(GameRating gameRating) throws SQLException, ClassNotFoundException {
+
+        String command="UPDATE TB_GAME_RATING\n" +
+                "\t\tSET GAME_ID_GAME=?,RATING=?,DESCRIPTION=?\n" +
+                "        WHERE ID_GAME_RATING=?;";
+
+        try(Connection getConnection=ConnectionDB.generateConnection();PreparedStatement prepareCommand=getConnection.prepareStatement(command);){
+
+            prepareCommand.setInt(1,gameRating.getGameID());
+            prepareCommand.setInt(2,gameRating.getRating());
+            prepareCommand.setString(3,gameRating.getDescription());
+            prepareCommand.setInt(4,gameRating.getGameRatingID());
+
+            return prepareCommand.executeUpdate();
+        }
+    }
+
+    public static int deleteGameRating(int gameRatingID) throws SQLException, ClassNotFoundException {
+
+        String command="DELETE FROM TB_GAME_RATING\n" +
+                "\t\tWHERE ID_GAME_RATING=?;";
+
+        try(Connection getConnection=ConnectionDB.generateConnection();PreparedStatement prepareCommand=getConnection.prepareStatement(command);){
+
+            prepareCommand.setInt(1,gameRatingID);
+
+            return prepareCommand.executeUpdate();
+        }
+    }
 }
