@@ -2,11 +2,9 @@ package com.jogosfx.Test;
 
 import com.jogosfx.dao.AdmDAO;
 import com.jogosfx.dao.GameDAO;
+import com.jogosfx.dao.GameRatingDAO;
 import com.jogosfx.dao.UserDAO;
-import com.jogosfx.model.game.Developer;
-import com.jogosfx.model.game.Game;
-import com.jogosfx.model.game.Gender;
-import com.jogosfx.model.game.Platform;
+import com.jogosfx.model.game.*;
 import com.jogosfx.model.user.Adm;
 import com.jogosfx.model.user.Client;
 import com.jogosfx.model.user.User;
@@ -16,7 +14,7 @@ import java.util.ArrayList;
 
 public class TestDAO {
 
-    final static int userAtual=12;
+    final static int userAtual=16;
 
     public static void userDAOTest() throws ClassNotFoundException, SQLException {
 
@@ -96,7 +94,7 @@ public class TestDAO {
         System.out.println("Adm Nome: "+admFoundCredential.get(0).getName());
     }
 
-    final static int gameAtual=2;
+    final static int gameAtual=5;
     final static int developerTeste = 1;
     final static int genderTeste = 1;
     final static int platformTeste = 1;
@@ -155,8 +153,54 @@ public class TestDAO {
         int updateResult = GameDAO.updateGame(gameAtualizado);
         System.out.println("Update Result: " + updateResult);
 
-        System.out.println("-----------Testando Delete GAME DAO-----------");
-       int deleteResult = GameDAO.deleteGame(gameAtual+1);
+       System.out.println("-----------Testando Delete GAME DAO-----------");
+       int deleteResult = GameDAO.deleteGame(gameAtual);
        System.out.println("Delete Result: " + deleteResult);
+    }
+
+    public static void gameRatingDAOTest() throws ClassNotFoundException, SQLException {
+
+        int gameId = gameAtual;
+        int userId = userAtual;
+        int ratingAtual=1;
+
+        System.out.println("-----------Testando Insert GAME RATING DAO-----------");
+        GameRating r1 = new GameRating(gameId, userId, "Avaliação de teste: ótimo jogo!",5);
+
+        System.out.println("Inserindo avaliação:\n" +
+                "Game ID: " + r1.getGameID() + "\n" +
+                "User ID: " + r1.getUserID() + "\n" +
+                "Nota: " + r1.getRating());
+        int testInsert = GameRatingDAO.insertGameRating(r1);
+        System.out.println("Insert Result (esperado 1): " + testInsert);
+
+        System.out.println("-----------Testando Query Game ID GAME RATING DAO-----------");
+        ArrayList<GameRating> ratingsByGame = GameRatingDAO.findByGameId(gameId);
+        System.out.println("Avaliações encontradas pelo Game ID (esperado >= 1): " + ratingsByGame.size());
+        imprimirGameRatings(ratingsByGame);
+
+        System.out.println("-----------Testando Query User ID GAME RATING DAO-----------");
+        ArrayList<GameRating> ratingsByUser = GameRatingDAO.findByUserId(userId);
+        System.out.println("Avaliações encontradas pelo User ID (esperado >= 1): " + ratingsByUser.size());
+        imprimirGameRatings(ratingsByUser);
+
+        System.out.println("-----------Testando Update GAME RATING DAO-----------");
+        GameRating ratingAtualizado = new GameRating(ratingAtual, gameId, userId, 3,
+                "Avaliação de teste atualizada");
+        int updateResult = GameRatingDAO.updateGameRating(ratingAtualizado);
+        System.out.println("Update Result (esperado 1): " + updateResult);
+
+        System.out.println("-----------Testando Delete GAME RATING DAO-----------");
+        int deleteResult = GameRatingDAO.deleteGameRating(ratingAtual);
+        System.out.println("Delete Result (esperado 1): " + deleteResult);
+    }
+
+    private static void imprimirGameRatings(ArrayList<GameRating> ratings) {
+        for (GameRating r : ratings) {
+            System.out.println("Game ID: " + r.getGameID() +
+                    " | User ID: " + r.getUserID() +
+                    " | Nota: " + r.getRating() +
+                    " | Descrição: " + r.getDescription());
+        }
     }
 }

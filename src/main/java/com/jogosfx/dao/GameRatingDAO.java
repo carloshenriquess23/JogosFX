@@ -50,7 +50,7 @@ public class GameRatingDAO {
     public static ArrayList<GameRating> findByUserId(int userId) throws SQLException, ClassNotFoundException {
 
         String command="SELECT ID_GAME_RATING,GAME_ID_GAME AS ID_GAME, USER_ID_USER AS ID_USER, RATING, DESCRIPTION FROM TB_GAME_RATING\n" +
-                "\t\tWHERE GAME_ID_GAME=?;";
+                "\t\tWHERE USER_ID_USER=?;";
 
         try(Connection getConnection=ConnectionDB.generateConnection();PreparedStatement prepareCommand=getConnection.prepareStatement(command);){
 

@@ -16,11 +16,12 @@ public class GameRating {
         this.description = description;
     }
 
-    public GameRating(int rating, int gameID, int userID, String description) {
-        this.rating = rating;
+    public GameRating(int gameID, int userID, String description, int rating) {
+
         this.gameID = gameID;
         this.userID = userID;
         this.description = description;
+        this.rating = rating;
     }
 
     public int getGameRatingID() {
