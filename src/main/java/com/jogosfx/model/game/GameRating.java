@@ -8,6 +8,14 @@ public class GameRating {
     int rating;
     String description;
 
+    public GameRating(int gameRatingID, int gameID, int userID, int rating, String description) {
+        this.gameRatingID = gameRatingID;
+        this.gameID = gameID;
+        this.userID = userID;
+        this.rating = rating;
+        this.description = description;
+    }
+
     public GameRating(int rating, int gameID, int userID, String description) {
         this.rating = rating;
         this.gameID = gameID;
