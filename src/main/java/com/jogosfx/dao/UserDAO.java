@@ -44,7 +44,8 @@ public class UserDAO {
 
             while (executeCommand.next()) {
 
-                usersFound.add(new Client(executeCommand.getInt(1), executeCommand.getString(2), executeCommand.getString(3), executeCommand.getDouble(4)));
+                Client userFound=new Client(executeCommand.getInt("ID_USER"), executeCommand.getString("EMAIL"), executeCommand.getString("NAME"), executeCommand.getDouble("BALANCE"));
+                usersFound.add(userFound);
             }
 
             testConnection.close();
@@ -68,7 +69,8 @@ public class UserDAO {
 
             while (executeCommand.next()) {
 
-                usersFound.add(new Client(executeCommand.getInt(1), executeCommand.getString(2), executeCommand.getString(3), executeCommand.getDouble(4)));
+                Client userFound=new Client(executeCommand.getInt("ID_USER"), executeCommand.getString("EMAIL"), executeCommand.getString("NAME"), executeCommand.getDouble("BALANCE"));
+                usersFound.add(userFound);
             }
 
             testConnection.close();
@@ -92,7 +94,8 @@ public class UserDAO {
 
             while (executeCommand.next()) {
 
-                usersFound.add(new Client(executeCommand.getInt(1), executeCommand.getString(2), executeCommand.getString(3), executeCommand.getDouble(4)));
+                Client userFound=new Client(executeCommand.getInt("ID_USER"), executeCommand.getString("EMAIL"), executeCommand.getString("NAME"), executeCommand.getDouble("BALANCE"));
+                usersFound.add(userFound);
             }
 
             testConnection.close();
