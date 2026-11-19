@@ -80,6 +80,22 @@ public class OrderDAO {
         }
     }
 
+    public static int updateStatusOrder(int status, int orderID)  throws SQLException {
+
+        String command="UPDATE TB_ORDER\n" +
+                "\tSET STATUS=?\n" +
+                "    WHERE ID_ORDER=?;";
+
+        try(Connection getConnection=ConnectionDB.generateConnection();
+        PreparedStatement commandPreparation=getConnection.prepareStatement(command);) {
+
+            commandPreparation.setInt(1, status);
+            commandPreparation.setInt(2, orderID);
+
+            return commandPreparation.executeUpdate();
+        }
+    }
+
     public static int deleteOrder(int orderID) throws SQLException {
 
         String command="DELETE FROM TB_ORDER WHERE ID_ORDER=?;";
