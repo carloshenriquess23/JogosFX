@@ -1,0 +1,361 @@
+{
+  "pbtResults": {
+    "2.3 Write property tests for `UserDAO` null-password rejection": {
+      "status": "passed",
+      "lastRunTimestamp": 1795734366874
+    },
+    "3.2 Write property test for `AdmDAO` null-credential rejection": {
+      "status": "passed",
+      "lastRunTimestamp": 1795734423873
+    },
+    "5.2 Write property test for `findByCredential` correctness": {
+      "status": "passed",
+      "lastRunTimestamp": 1795735815883
+    },
+    "6.3 Write property test for `verifyCredential` with absent admin": {
+      "status": "passed",
+      "lastRunTimestamp": 1795735884082
+    },
+    "8.1 Write property test for hash-then-verify round-trip": {
+      "status": "passed",
+      "lastRunTimestamp": 1795736434506
+    },
+    "8.2 Write property test for hash irreversibility": {
+      "status": "passed",
+      "lastRunTimestamp": 1795736446172
+    }
+  },
+  "executionHistory": {
+    "1. Add jqwik test dependency to pom.xml": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733713308
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733720190
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733832559
+      }
+    ],
+    "2.1 Add null guard and `PasswordUtils.hash()` call in `insertUser`": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733713636
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733835014
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733856179
+      }
+    ],
+    "2.2 Add null guard and `PasswordUtils.hash()` call in `updateUser`": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733713962
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733837126
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733858245
+      }
+    ],
+    "2.3 Write property tests for `UserDAO` null-password rejection": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733714111
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733860625
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734376361
+      }
+    ],
+    "3.1 Add null guard and `PasswordUtils.hash()` call in `insertAdmin`": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733714275
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733862799
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734379127
+      }
+    ],
+    "3.2 Write property test for `AdmDAO` null-credential rejection": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733714401
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734381939
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734430629
+      }
+    ],
+    "4. Checkpoint — Ensure null-guard tests pass": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733714549
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734433024
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734478320
+      }
+    ],
+    "5.1 Remove `WHERE CREDENTIAL=?` from SQL and add in-loop `PasswordUtils.verify()` filter": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733714695
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734481222
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734810781
+      }
+    ],
+    "5.2 Write property test for `findByCredential` correctness": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733714839
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734815856
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795735826550
+      }
+    ],
+    "6.1 Implement `findByUserId(int userId)` returning `Optional<Adm>`": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733715038
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734483374
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734813223
+      }
+    ],
+    "6.2 Implement `verifyCredential(int userId, String plainCredential)` returning `boolean`": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733715274
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734818140
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795735829563
+      }
+    ],
+    "6.3 Write property test for `verifyCredential` with absent admin": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733715471
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795735832112
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795735891780
+      }
+    ],
+    "7.1 Write unit tests for `UserDAO` hashing behaviour": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733715603
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795735895135
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736307806
+      }
+    ],
+    "7.2 Write unit tests for `AdmDAO` hashing and credential methods": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733715982
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795735897443
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736310654
+      }
+    ],
+    "8.1 Write property test for hash-then-verify round-trip": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733716333
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736314210
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736454481
+      }
+    ],
+    "8.2 Write property test for hash irreversibility": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733716640
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736316916
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736457097
+      }
+    ],
+    "9. Final checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795733717107
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736460308
+      },
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736596833
+      }
+    ],
+    "2. Harden `UserDAO` with null-guard and password hashing": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734376802
+      }
+    ],
+    "3. Harden `AdmDAO.insertAdmin` with null-guard and credential hashing": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795734430726
+      }
+    ],
+    "5. Refactor `AdmDAO.findByCredential` to application-layer filtering": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795735826658
+      }
+    ],
+    "6. Add `findByUserId` and `verifyCredential` to `AdmDAO`": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795735891876
+      }
+    ],
+    "7. Write unit tests (JUnit 5 + Mockito) for all DAO changes": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736311145
+      }
+    ],
+    "8. Write property tests for `PasswordUtils` core properties": [
+      {
+        "executionId": "ec171271-94fb-48e1-9e0e-f49ff21344b1",
+        "chatSessionId": "sess_568506b6-616a-4665-b414-ee5b50250580",
+        "timestamp": 1795736457432
+      }
+    ]
+  }
+}

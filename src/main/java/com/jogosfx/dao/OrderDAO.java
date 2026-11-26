@@ -58,8 +58,10 @@ public class OrderDAO {
 
     public static ArrayList<Order> findByUserId(int userID) throws SQLException {
 
-        String command="SELECT ID_ORDER, USER_ID_USER AS ORDER_USER, ORDER_DATE, STATUS, TOTAL, ID_PAYMENT_METHOD, GAME_ID_GAME AS ORDER_GAME\n" +
+        String command="SELECT ID_ORDER, USER_ID_USER AS ORDER_USER, ORDER_DATE, STATUS, TOTAL, TB_PAYMENT_METHOD.NAME AS PAYMENT_METHOD, GAME_ID_GAME AS ORDER_GAME\n" +
                 "\tFROM TB_ORDER\n" +
+                "    INNER JOIN TB_PAYMENT_METHOD\n" +
+                "\t\tON TB_ORDER.ID_PAYMENT_METHOD=TB_PAYMENT_METHOD.ID_PAYMENT_METHOD\n" +
                 "    WHERE USER_ID_USER=?;";
 
         try(Connection getConnection=ConnectionDB.generateConnection();

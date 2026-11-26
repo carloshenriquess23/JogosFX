@@ -7,10 +7,13 @@ import java.util.ArrayList;
 
 import com.jogosfx.model.user.Client;
 import com.jogosfx.model.user.User;
+import com.jogosfx.util.PasswordUtils;
 
 public class UserDAO {
 
     public static int insertUser(User user,String password) throws SQLException {
+
+        if (password == null) throw new IllegalArgumentException("Password must not be null");
 
         String command="INSERT INTO TB_USER(EMAIL,PASSWORD,NAME)\n" +
                 "\tVALUES(?,?,?);";
@@ -19,7 +22,7 @@ public class UserDAO {
         PreparedStatement commandPreparation=testConnection.prepareStatement(command);) {
 
             commandPreparation.setString(1, user.getEmail());
-            commandPreparation.setString(2, password);
+            commandPreparation.setString(2, PasswordUtils.hash(password));
             commandPreparation.setString(3, user.getName());
 
             int executeCommand = commandPreparation.executeUpdate();
@@ -105,6 +108,10 @@ public class UserDAO {
 
     public static int updateUser(User user, String password) throws SQLException {
 
+        if (password == null) throw new IllegalArgumentException("Password must not be null");
+
+        String hashedPassword = PasswordUtils.hash(password);
+
         String command="UPDATE TB_USER\n" +
                 "\tSET EMAIL=?,PASSWORD=?,NAME=?,BALANCE=?\n" +
                 "\tWHERE ID_USER=?;";
@@ -113,7 +120,7 @@ public class UserDAO {
         PreparedStatement commandPreparation=testConnection.prepareStatement(command);) {
 
             commandPreparation.setString(1, user.getEmail());
-            commandPreparation.setString(2, password);
+            commandPreparation.setString(2, hashedPassword);
             commandPreparation.setString(3, user.getName());
             commandPreparation.setDouble(4, user.getBalance());
             commandPreparation.setInt(5, user.getUserId());
